@@ -1,15 +1,18 @@
+
 workflows:
-  android-workflow:
-    name: Android APK Build
-    max_build_duration: 60
-    environment:
-      flutter: stable
-    scripts:
-      - name: Unzip project
-        script: unzip -o "live audio room zip(1).zip" -d .
-      - name: Get Flutter packages
-        script: cd "live audio room zip(1)" && flutter pub get
-      - name: Build APK
-        script: cd "live audio room zip(1)" && flutter build apk --release
-    artifacts:
-      - "live audio room zip(1)/build/app/outputs/flutter-apk/*.apk"
+
+    android-workflow-id:
+
+        name: Android Sample Workflow
+
+        # .......    
+
+        # .......
+
+        # .......  
+
+    ios-workflow-id:
+
+        name: iOS Sample Workflow
+
+        # ......
