@@ -1,0 +1,9 @@
+workflow: ios-workflow
+trigger: push
+steps:
+    - checkout:
+      repository: your-repo
+    - run: |
+      unzip your-code.zip
+    - build:
+      target: ios
