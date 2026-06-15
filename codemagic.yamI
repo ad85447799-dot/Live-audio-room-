@@ -1,9 +1,17 @@
-workflow: ios-workflow
-trigger: push
-steps:
-    - checkout:
-      repository: your-repo
-    - run: |
-      unzip your-code.zip
-    - build:
-      target: ios
+
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    max_build_duration: 120
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Unzip project
+        script: unzip -o "live audio room zip(1).zip" -d "live audio room zip(1)"
+      - name: Get Flutter packages
+        script: cd "live audio room zip(1)" && flutter pub get
+      - name: Build iOS
+        script: cd "live audio room zip(1)" && flutter build ios --release --no-codesign
+    artifacts:
+      - "live audio room zip(1)"/build/ios/ipa/*.ipa
